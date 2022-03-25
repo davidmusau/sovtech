@@ -1,26 +1,19 @@
 import {createServer} from "http";
 import express from "express";
 import {ApolloServer, gql} from "apollo-server-express";
+import cors from "cors";
+import {schema} from "./graphql/schema";
 
 const startServer = async  () =>{
 
     const app = express();
+    const port = process.env.PORT || 5000
+    app.use(cors())
+
     const httpServer = createServer(app)
 
-    const typeDefs = gql`
-        type Query {
-            hello: String
-        }
-    `;
-    const resolvers = {
-        Query: {
-            hello: () => 'Hello world!',
-        },
-    };
-
     const apolloServer = new ApolloServer({
-        typeDefs,
-        resolvers,
+        schema,
     })
     await apolloServer.start()
 
@@ -30,8 +23,8 @@ const startServer = async  () =>{
     })
 
 
-    httpServer.listen({ port: process.env.PORT || 5000 }, () =>
-        console.log(`Server listening on localhost:5000${apolloServer.graphqlPath}`)
+    httpServer.listen({ port}, () =>
+        console.log(`🚀 Apollo GraphQL-Server is running on http://localhost:${port}${apolloServer.graphqlPath}`)
     )
 
 }
