@@ -17,13 +17,15 @@ const express_1 = __importDefault(require("express"));
 const apollo_server_express_1 = require("apollo-server-express");
 const cors_1 = __importDefault(require("cors"));
 const schema_1 = require("./graphql/schema");
+const dataSource_1 = __importDefault(require("./datasource/dataSource"));
 const startServer = () => __awaiter(void 0, void 0, void 0, function* () {
     const app = (0, express_1.default)();
-    const port = process.env.PORT || 5000;
+    const port = process.env.PORT || 5004;
     app.use((0, cors_1.default)());
     const httpServer = (0, http_1.createServer)(app);
     const apolloServer = new apollo_server_express_1.ApolloServer({
         schema: schema_1.schema,
+        dataSources: dataSource_1.default
     });
     yield apolloServer.start();
     apolloServer.applyMiddleware({
