@@ -11,7 +11,13 @@ export interface Planet {
     name:string
     climate:string
 }
-
+export interface SearchCharacter {
+    name: string
+    page: number
+}
+export interface SearchInput {
+    search: SearchCharacter
+}
 export interface DataSources {
    characterAPI: CharactersAPI
 }

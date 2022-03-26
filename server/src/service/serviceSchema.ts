@@ -12,13 +12,14 @@ export const ServiceTypeDefs = gql`
         name:String
         Climate:String
     }
+  
     type Query {
         # Fetch all users
         getAllPeople:[Characters]
         #pagination
-        getAllOnSpecificPage(id:Int!):[Characters]
+        getAllOnSpecificPage(page:Int):[Characters]
         #Get Person details
-        getPersonDetails(name:String!):[Characters]
+        getPersonDetails(name:String):[Characters]
         #test query
         hello: String
     }
