@@ -1,7 +1,5 @@
 import CharactersAPI from "./datasource/CharactersAPI";
 
-
-
 export interface Character {
     name: string
     gender: string
