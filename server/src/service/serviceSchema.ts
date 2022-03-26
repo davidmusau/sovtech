@@ -6,7 +6,7 @@ export const ServiceTypeDefs = gql`
         height: Int
         mass: Int
         gender: String
-        homeworld: Planet
+        homeworld: String
     }
     type Planet {
         name:String
@@ -23,3 +23,4 @@ export const ServiceTypeDefs = gql`
         hello: String
     }
 `;
+
