@@ -20,8 +20,6 @@ export const ServiceTypeDefs = gql`
         person(name:String!):[Characters]
         #pagination
         specificPage(page:Int!):[Characters]
-        #test query
-        hello: String
     }
 `;
 

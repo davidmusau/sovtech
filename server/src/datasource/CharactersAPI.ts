@@ -5,10 +5,12 @@ export default class CharactersAPI extends RESTDataSource {
         this.baseURL = 'https://swapi.dev/api'
     }
 
+
     // fetch all characters
     async getAllPeople() {
        return  await this.get('people')
     }
+
 
 // filter people on a specific page
     async getByPage(page: number) {
@@ -16,6 +18,8 @@ export default class CharactersAPI extends RESTDataSource {
             page,
         });
     }
+
+
 // get person details
     async getByName(search:string) {
         return await this.get(`people`,{
