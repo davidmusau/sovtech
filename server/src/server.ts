@@ -17,6 +17,7 @@ const startServer = async  () =>{
     app.get('/', function (req, res) {
         res.sendFile(path.join(__dirname, '../build', 'index.html'));
     });
+
     const httpServer = createServer(app)
 
     const apolloServer = new ApolloServer({

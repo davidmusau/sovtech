@@ -6,7 +6,7 @@ import * as serviceWorker from './serviceWorker';
 import '../src/common/styles/index.css';
 import App from './components/App/App';
 const client = new ApolloClient({
-    uri: 'http://localhost:4000/api',
+    uri: 'https://sovtechserver.herokuapp.com/api',
     cache: new InMemoryCache(),
 });
 ReactDOM.render(
