@@ -9,8 +9,8 @@ import dataSources from "./datasource/dataSource";
 const startServer = async  () =>{
 
     const app = express();
-    const port = process.env.PORT || 5004
-    app.use(cors())
+    const port = process.env.PORT || 4000
+    app.use(cors({origin:"*"}))
 
     const httpServer = createServer(app)
 
@@ -24,7 +24,7 @@ const startServer = async  () =>{
         app,
         path: '/api'
     })
-
+    
     httpServer.listen({ port}, () =>
         console.log(`🚀 Apollo GraphQL-Server is running on http://localhost:${port}${apolloServer.graphqlPath}`)
     )
