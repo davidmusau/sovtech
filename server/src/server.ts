@@ -12,10 +12,10 @@ const startServer = async  () =>{
     const app = express();
     const port = process.env.PORT || 4000
     app.use(cors({origin:"*"}))
-    app.use(express.static(path.join(__dirname, '../../sovtech_client/build')));
+    app.use(express.static(path.join(__dirname, '../build')));
 
     app.get('/', function (req, res) {
-        res.sendFile(path.join(__dirname, '../../sovtech_client/build', 'index.html'));
+        res.sendFile(path.join(__dirname, '../build', 'index.html'));
     });
 
     const httpServer = createServer(app)
