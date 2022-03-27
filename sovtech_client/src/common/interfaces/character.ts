@@ -5,3 +5,6 @@ export interface Character {
     gender: string
     homeworld: string
 }
+export interface CharactersResult {
+    characters: Array<Character>;
+}

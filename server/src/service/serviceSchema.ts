@@ -15,11 +15,11 @@ export const ServiceTypeDefs = gql`
   
     type Query {
         # Fetch all users
-        getAllPeople:[Characters]
-        #pagination
-        getAllOnSpecificPage(page:Int):[Characters]
+        characters:[Characters]
         #Get Person details
-        getPersonDetails(name:String):[Characters]
+        person(name:String!):[Characters]
+        #pagination
+        specificPage(page:Int!):[Characters]
         #test query
         hello: String
     }

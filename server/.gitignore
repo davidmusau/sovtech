@@ -1,6 +1,5 @@
 # typescript
-build/
-
+build
 # Logs
 logs
 *.log
