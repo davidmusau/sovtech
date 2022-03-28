@@ -7,9 +7,6 @@ import React from "react";
 
 const CharacterList = () => {
 const {loading,data} = useQuery<CharactersResult>(QUERY_CHARACTER_LIST)
-    function handleClick() {
-
-    }
     return(
         <>
             <table className="table">
