@@ -9,13 +9,15 @@ import CharacterDetails from "../CharacterDetails/characterdetails";
 const CharacterList = () => {
 const {loading,data} = useQuery<CharactersResult>(QUERY_CHARACTER_LIST)
     const [query, setQuery] = useState("")
+const fetchCharacterDetails = (e: any) => {
+    console.log(e)
 
+}
 
     return(
         <>
-        <div className="DataTable">
-            <table className="Table">
-                <thead>
+            <table className="table">
+                <thead className="tableRowHeader">
                 <tr>
                     <th>Name</th>
                     <th>Height</th>
@@ -26,20 +28,18 @@ const {loading,data} = useQuery<CharactersResult>(QUERY_CHARACTER_LIST)
                 </thead>
                 <tbody>
                 {loading || !data ? (<tr><td>Loading...</td></tr>):
-                        data.characters.map((character,index)=>(
-                                <tr key={index} >
-                                    <td>{character.name}</td>
-                                    <td>{character.height}</td>
-                                    <td>{character.mass}</td>
-                                    <td>{character.gender}</td>
-                                    <td>{character.homeworld}</td>
+                        data.characters.map((character:Character,index)=>(
+                                <tr className="tableRowItems" key={index} data-item={character} >
+                                    <td className="tableCell">{character.name}</td>
+                                    <td className="tableCell">{character.height}</td>
+                                    <td className="tableCell">{character.mass}</td>
+                                    <td className="tableCell">{character.gender}</td>
+                                    <td className="tableCell">{character.homeworld}</td>
                                 </tr>
                         ))
                     }
                 </tbody>
             </table>
-
-        </div>
         </>
     )
 
