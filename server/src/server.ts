@@ -12,10 +12,10 @@ const startServer = async  () =>{
     const app = express();
     const port = process.env.PORT || 4000
     app.use(cors({origin:"*"}))
-    app.use(express.static(path.join(__dirname, '../build')));
+    app.use(express.static(path.join(__dirname, '../client')));
 
     app.get('/home', function (req, res) {
-        res.sendFile(path.join(__dirname+'../build', 'index.html'));
+        res.sendFile(path.join(__dirname+'../client', 'index.html'));
     });
 
     const httpServer = createServer(app)
@@ -32,7 +32,7 @@ const startServer = async  () =>{
     })
     
     httpServer.listen({ port}, () =>
-        console.log(`🚀 Apollo GraphQL-Server is running on http://localhost:${port}${apolloServer.graphqlPath}`)
+        console.log(`🚀 Apollo GraphQL-Server is running on http://localhost:${port}/home`)
     )
 
 }
