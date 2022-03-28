@@ -29,8 +29,10 @@ const {loading,data} = useQuery<CharactersResult>(QUERY_CHARACTER_LIST)
                                     <td className="tableCell">{character.gender}</td>
                                     <td className="tableCell">{character.homeworld}</td>
                                 </tr>
+
                         ))
                     }
+
                 </tbody>
             </table>
         </>
