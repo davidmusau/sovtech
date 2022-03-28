@@ -1,25 +1,26 @@
 import {gql} from "apollo-server-express";
 
 export const ServiceTypeDefs = gql`
-    type Characters {
+    type Character {
         name: String
         height: Int
-        mass: Int
+        mass: String
         gender: String
         homeworld: String
     }
-    type Planet {
-        name:String
-        Climate:String
+    type PageResponse{
+        count:Int
+        next:String
+        previous:String
+    results:[Character]
     }
-  
     type Query {
         # Fetch all users
-        characters:[Characters]
+        characters:[Character]
         #Get Person details
-        person(name:String!):[Characters]
+        person(name:String!):[Character]
         #pagination
-        specificPage(page:Int!):[Characters]
+        specificPage(page:Int!):PageResponse
     }
 `;
 

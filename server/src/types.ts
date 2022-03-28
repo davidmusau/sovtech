@@ -4,12 +4,14 @@ export interface Character {
     name: string
     gender: string
     height: number
-    mass: number
-    homeworld: Planet
+    mass: string
+    homeworld: String
 }
-export interface Planet {
-    name:string
-    climate:string
+export interface PageResponse{
+    count:Number
+    next:string
+    previous:string
+    results:Character[]
 }
 export interface SearchCharacter {
     name: string

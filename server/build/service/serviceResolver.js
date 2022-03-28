@@ -12,26 +12,17 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.ServiceResolvers = void 0;
 exports.ServiceResolvers = {
     Query: {
+        // fetching details of all characters
         characters: (_, __, { dataSources }) => __awaiter(void 0, void 0, void 0, function* () {
-            const res = yield dataSources.characterAPI.getAllPeople();
-            return res.results.map((item) => ({
-                name: item.name, height: item.height, mass: item.mass,
-                gender: item.gender, homeworld: item.homeworld,
-            }));
+            return yield dataSources.characterAPI.getAllPeople().then(resp => resp.results.map((item) => item));
         }),
+        // getting all persons details
         person: (_, args, { dataSources }) => __awaiter(void 0, void 0, void 0, function* () {
-            let res = yield dataSources.characterAPI.getByName(args.name);
-            return res.results.map((item) => ({
-                name: item.name, height: item.height, mass: item.mass,
-                gender: item.gender, homeworld: item.homeworld,
-            }));
+            return yield dataSources.characterAPI.getByName(args.name).then(resp => resp.results.map((item) => item));
         }),
+        // fetching data from a specific page
         specificPage: (_, args, { dataSources }) => __awaiter(void 0, void 0, void 0, function* () {
-            let res = yield dataSources.characterAPI.getByPage(args.page);
-            return res.results.map((item) => ({
-                name: item.name, height: item.height, mass: item.mass,
-                gender: item.gender, homeworld: item.homeworld,
-            }));
+            return yield dataSources.characterAPI.getByPage(args.page).then((receivedData) => receivedData);
         })
     }
 };
