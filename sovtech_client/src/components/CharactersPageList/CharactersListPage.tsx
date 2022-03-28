@@ -2,6 +2,7 @@ import {useLazyQuery, useQuery } from "@apollo/client";
 import { useState } from "react";
 import { Character, CharactersResult } from "../../common/interfaces/character";
 import CharacterList from "../CharacterList/characterlist";
+import "../../common/styles/layout.css"
 import { QUERY_CHARACTER_PAGE } from "../Queries/query";
 
 

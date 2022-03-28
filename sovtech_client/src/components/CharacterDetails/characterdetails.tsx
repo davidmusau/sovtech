@@ -4,6 +4,7 @@ import { Character } from "../../common/interfaces/character";
 import CharacterList from "../CharacterList/characterlist";
 import { QUERY_CHARACTER_DETAILS } from "../Queries/query";
 
+import "../../common/styles/layout.css"
 
 const CharacterDetails = ()=>{
         const  [searchFilter, setSearchFilter] = useState("")
