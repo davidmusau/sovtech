@@ -37,7 +37,7 @@ const startServer = () => __awaiter(void 0, void 0, void 0, function* () {
         app,
         path: '/api'
     });
-    httpServer.listen({ port }, () => console.log(`🚀 Apollo GraphQL-Server is running on http://localhost:${port}/home`));
+    httpServer.listen({ port }, () => console.log(`🚀 Apollo GraphQL-Server is running on http://localhost:${port}${apolloServer.graphqlPath}`));
 });
 startServer();
 //# sourceMappingURL=server.js.map

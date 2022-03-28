@@ -32,7 +32,7 @@ const startServer = async  () =>{
     })
     
     httpServer.listen({ port}, () =>
-        console.log(`🚀 Apollo GraphQL-Server is running on http://localhost:${port}/home`)
+        console.log(`🚀 Apollo GraphQL-Server is running on http://localhost:${port}${apolloServer.graphqlPath}`)
     )
 
 }
