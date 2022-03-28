@@ -46,3 +46,10 @@ Create an asynchronous function to start the server.
         npm i --save
 # Run client app
         npm run start
+
+
+# apollo server url 
+    https://sovtechserver.herokuapp.com/api
+
+# React SPA Client url
+    https://sovtechtest.netlify.app

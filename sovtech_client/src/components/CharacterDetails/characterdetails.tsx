@@ -1,6 +1,6 @@
-import {useLazyQuery, useQuery } from "@apollo/client";
+import {useLazyQuery } from "@apollo/client";
 import { useState } from "react";
-import { Character, CharactersResult } from "../../common/interfaces/character";
+import { Character } from "../../common/interfaces/character";
 import CharacterList from "../CharacterList/characterlist";
 import { QUERY_CHARACTER_DETAILS } from "../Queries/query";
 
@@ -13,10 +13,8 @@ const CharacterDetails = ()=>{
     const enabled = searchFilter.length >=2;
 
     function refreshPage() {
-        console.log(data.length)
-        if (data !== null){
             window.location.reload();
-        }
+
     }
         return (
             <div>

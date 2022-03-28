@@ -1,19 +1,11 @@
 import { useQuery } from "@apollo/client"
 import { Character, CharactersResult } from "../../common/interfaces/character"
-import {QUERY_CHARACTER_DETAILS, QUERY_CHARACTER_LIST } from "../Queries/query"
+import { QUERY_CHARACTER_LIST } from "../Queries/query"
 import "../../common/styles/layout.css"
-import { useState } from "react";
-import CharacterDetails from "../CharacterDetails/characterdetails";
 
 
 const CharacterList = () => {
 const {loading,data} = useQuery<CharactersResult>(QUERY_CHARACTER_LIST)
-    const [query, setQuery] = useState("")
-const fetchCharacterDetails = (e: any) => {
-    console.log(e)
-
-}
-
     return(
         <>
             <table className="table">
