@@ -8,9 +8,7 @@ import { QUERY_CHARACTER_PAGE } from "../Queries/query";
 
 const CharactersOnSpecificPage = ()=>{
     const  [pageFilter, setPageFilter] = useState("")
-    const [executeSearch, { data,loading }] = useLazyQuery(
-        QUERY_CHARACTER_PAGE
-    );
+    const [executeSearch, { data,loading }] = useLazyQuery(QUERY_CHARACTER_PAGE);
     const enabled = pageFilter.length > 0 ;
     return (
         <div>

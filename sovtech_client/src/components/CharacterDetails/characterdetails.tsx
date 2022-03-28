@@ -8,9 +8,7 @@ import "../../common/styles/layout.css"
 
 const CharacterDetails = ()=>{
         const  [searchFilter, setSearchFilter] = useState("")
-        const [executeSearch, { data,loading }] = useLazyQuery(
-            QUERY_CHARACTER_DETAILS
-        );
+        const [executeSearch, { data,loading }] = useLazyQuery(QUERY_CHARACTER_DETAILS);
     const enabled = searchFilter.length >=2;
 
     function refreshPage() {
