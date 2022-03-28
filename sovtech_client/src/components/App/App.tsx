@@ -3,9 +3,12 @@ import "../../common/styles/layout.css"
 import CharacterDetails from '../CharacterDetails/characterdetails';
 const App = () => {
     return (
-        <div className="App">
-            <CharacterDetails/>
-        </div>
+        <main className="container">
+            <div className="wrapper">
+                <CharacterDetails/>
+            </div>
+        </main>
+
     );
 };
 
